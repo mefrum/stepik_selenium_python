@@ -1,0 +1,17 @@
+import math
+
+from selenium import webdriver
+
+link = "http://suninjuly.github.io/find_link_text"
+browser = webdriver.Chrome()
+link_text = str(math.ceil(math.pow(math.pi, math.e) * 10000))
+
+browser.get(link)
+browser.find_element_by_link_text(link_text).click()
+
+browser.find_element_by_name("first_name").send_keys("first_name")
+browser.find_element_by_name("last_name").send_keys("last_name")
+browser.find_element_by_class_name("city").send_keys("city")
+browser.find_element_by_id("country").send_keys("country")
+
+browser.find_element_by_css_selector("button.btn").click()
